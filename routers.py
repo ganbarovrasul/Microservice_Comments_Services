@@ -14,7 +14,7 @@ def comments(post_id):
             'type': 'CommentCreated',
             'data': new_comment
         }
-        requests.post('http://127.0.0.1:5003/events', json=post_data)
+        requests.post('https://microservices-eventbus-service.herokuapp.com/events', json=post_data)
         return jsonify(new_comment), 201
     # time.sleep(1)    
     comments = get_comments(blog_id=post_id)
